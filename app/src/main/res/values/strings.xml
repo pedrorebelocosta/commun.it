@@ -6,7 +6,7 @@
     <string name="notes">Notes</string>
     <string name="notes_tooltip">Add notes</string>
     <string name="profile">Personal data</string>
-    <string name="profile_tooltip">Make changes to your personal data</string>
+    <string name="profile_tooltip">Consult and change</string>
     <string name="settings">Settings</string>
     <string name="settings_tooltip">Change settings</string>
 </resources>
