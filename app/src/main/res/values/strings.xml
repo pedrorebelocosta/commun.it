@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Commun.it</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_main">Welcome</string>
+    <string name="map">Map</string>
+    <string name="map_tooltip">Open map</string>
+    <string name="notes">Notes</string>
+    <string name="notes_tooltip">Add notes</string>
+    <string name="profile">Personal data</string>
+    <string name="profile_tooltip">Consult and change</string>
+    <string name="settings">Settings</string>
+    <string name="settings_tooltip">Change settings</string>
 </resources>

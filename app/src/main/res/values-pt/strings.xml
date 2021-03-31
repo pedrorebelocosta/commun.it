@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Commun.it</string>
+    <string name="title_activity_main">Bem-vindo(a)</string>
+    <string name="map">Mapa</string>
+    <string name="map_tooltip">Ver ocorrências</string>
+    <string name="notes">Notas</string>
+    <string name="notes_tooltip">Ver e adicionar notas</string>
+    <string name="profile">Dados pessoais</string>
+    <string name="profile_tooltip">Consultar e alterar</string>
+    <string name="settings">Definições</string>
+    <string name="settings_tooltip">Alterar preferências</string>
+</resources>

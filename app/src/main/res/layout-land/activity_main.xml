@@ -18,6 +18,7 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/map_card"
         android:layout_width="0dp"
@@ -25,15 +26,17 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/note_card"
-        app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.45"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/notes_card"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.23">
 
         <ImageView
             android:layout_width="match_parent"
@@ -49,23 +52,23 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="16dp"
-                android:paddingTop="24dp"
-                android:paddingLeft="16dp"
-                android:paddingEnd="16dp"
-                android:paddingRight="16dp"
-                android:paddingBottom="16dp"
                 android:layout_alignParentBottom="true"
                 android:alpha="0.54"
                 android:background="@drawable/main_activity_title_gradient"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="24dp"
+                android:paddingEnd="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/map"
-                    android:textSize="18sp"
                     android:textColor="@color/white"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -78,34 +81,32 @@
 
 
         </RelativeLayout>
-
-
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
-        android:id="@+id/note_card"
+        android:id="@+id/notes_card"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.45"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/profile_card"
         app:layout_constraintStart_toEndOf="@+id/map_card"
-        app:layout_constraintTop_toTopOf="@+id/map_card">
+        app:layout_constraintTop_toTopOf="@+id/map_card"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.23">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.7"
             android:contentDescription="@string/map"
-            android:scaleType="fitEnd"
-            android:src="@drawable/ic_main_activity_notes"
-            android:translationX="90dp"
-            android:translationY="-100dp" />
+            android:src="@drawable/ic_main_activity_notes" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -114,16 +115,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="16dp"
-                android:paddingTop="24dp"
-                android:paddingLeft="16dp"
-                android:paddingEnd="16dp"
-                android:paddingRight="16dp"
-                android:paddingBottom="16dp"
                 android:layout_alignParentBottom="true"
                 android:alpha="0.54"
                 android:background="@drawable/main_activity_title_gradient"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:paddingTop="24dp"
+                android:paddingEnd="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -143,51 +144,50 @@
 
 
         </RelativeLayout>
-
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/profile_card"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/note_card">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/settings_card"
+        app:layout_constraintStart_toEndOf="@+id/notes_card"
+        app:layout_constraintTop_toTopOf="@+id/notes_card"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.23">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.7"
             android:contentDescription="@string/map"
-            android:scaleType="fitEnd"
-            android:src="@drawable/ic_main_activity_profile"
-            android:translationX="60dp" />
+            android:src="@drawable/ic_main_activity_profile" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.54"
-            android:background="@drawable/main_activity_title_gradient">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:alpha="0.54"
+                android:background="@drawable/main_activity_title_gradient"
+                android:orientation="vertical"
                 android:paddingStart="16dp"
-                android:paddingTop="24dp"
                 android:paddingLeft="16dp"
+                android:paddingTop="24dp"
                 android:paddingEnd="16dp"
                 android:paddingRight="16dp"
-                android:paddingBottom="16dp"
-                android:layout_alignParentBottom="true"
-                android:orientation="vertical">
+                android:paddingBottom="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -208,48 +208,49 @@
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/settings_card"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_card">
+        app:layout_constraintStart_toEndOf="@+id/profile_card"
+        app:layout_constraintTop_toTopOf="@+id/profile_card"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.23">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.7"
             android:contentDescription="@string/map"
-            android:scaleType="fitEnd"
             android:src="@drawable/ic_main_activity_settings" />
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.54"
-            android:background="@drawable/main_activity_title_gradient">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:alpha="0.54"
+                android:background="@drawable/main_activity_title_gradient"
+                android:orientation="vertical"
                 android:paddingStart="16dp"
-                android:paddingTop="24dp"
                 android:paddingLeft="16dp"
+                android:paddingTop="24dp"
                 android:paddingEnd="16dp"
                 android:paddingRight="16dp"
-                android:paddingBottom="16dp"
-                android:layout_alignParentBottom="true"
-                android:orientation="vertical">
+                android:paddingBottom="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -266,6 +267,11 @@
                     android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
+
+
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
