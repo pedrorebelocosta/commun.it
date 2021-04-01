@@ -10,4 +10,6 @@
     <string name="profile_tooltip">Consultar e alterar</string>
     <string name="settings">Definições</string>
     <string name="settings_tooltip">Alterar preferências</string>
+    <string name="map_search_label">Procurar…</string>
+    <string name="title_activity_maps">Mapa</string>
 </resources>
