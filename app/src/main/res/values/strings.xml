@@ -9,4 +9,6 @@
     <string name="profile_tooltip">Consult and change</string>
     <string name="settings">Settings</string>
     <string name="settings_tooltip">Change settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="map_search_label">Search…</string>
 </resources>

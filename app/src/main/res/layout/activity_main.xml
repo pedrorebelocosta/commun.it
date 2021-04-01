@@ -34,18 +34,15 @@
         app:layout_constraintHeight_percent="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
-
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.7"
             android:contentDescription="@string/map"
             android:src="@drawable/ic_main_activity_map" />
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,7 +56,6 @@
                 android:alpha="0.54"
                 android:background="@drawable/main_activity_title_gradient"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -67,7 +63,6 @@
                     android:textSize="18sp"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -75,11 +70,7 @@
                     android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
-
-
         </RelativeLayout>
-
-
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:id="@+id/note_card"
@@ -96,7 +87,6 @@
         app:layout_constraintHeight_percent="0.45"
         app:layout_constraintStart_toEndOf="@+id/map_card"
         app:layout_constraintTop_toTopOf="@+id/map_card">
-
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -106,11 +96,9 @@
             android:src="@drawable/ic_main_activity_notes"
             android:translationX="90dp"
             android:translationY="-100dp" />
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,7 +112,6 @@
                 android:alpha="0.54"
                 android:background="@drawable/main_activity_title_gradient"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -132,7 +119,6 @@
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -140,10 +126,7 @@
                     android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
-
-
         </RelativeLayout>
-
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:id="@+id/profile_card"
@@ -161,7 +144,6 @@
         app:layout_constraintHeight_percent="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/note_card">
-
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -170,13 +152,11 @@
             android:scaleType="fitEnd"
             android:src="@drawable/ic_main_activity_profile"
             android:translationX="60dp" />
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.54"
             android:background="@drawable/main_activity_title_gradient">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -188,7 +168,6 @@
                 android:paddingBottom="16dp"
                 android:layout_alignParentBottom="true"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -196,7 +175,6 @@
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -204,8 +182,6 @@
                     android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>
-
-
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
@@ -224,7 +200,6 @@
         app:layout_constraintHeight_percent="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_card">
-
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -232,13 +207,11 @@
             android:contentDescription="@string/map"
             android:scaleType="fitEnd"
             android:src="@drawable/ic_main_activity_settings" />
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.54"
             android:background="@drawable/main_activity_title_gradient">
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -250,7 +223,6 @@
                 android:paddingBottom="16dp"
                 android:layout_alignParentBottom="true"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -258,7 +230,6 @@
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

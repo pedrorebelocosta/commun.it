@@ -1,4 +1,4 @@
-package com.example.communit
+package com.cpe.communit
 
 import org.junit.Test
 
