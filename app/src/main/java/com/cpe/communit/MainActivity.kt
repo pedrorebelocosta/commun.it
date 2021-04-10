@@ -17,5 +17,9 @@ class MainActivity : AppCompatActivity() {
         note_card.setOnClickListener {
             startActivity(Intent(this, NotesActivity::class.java))
         }
+
+        profile_card.setOnClickListener {
+            TODO("Needs verification on login status")
+        }
     }
 }
