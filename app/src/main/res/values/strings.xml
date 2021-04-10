@@ -11,4 +11,8 @@
     <string name="settings_tooltip">Change settings</string>
     <string name="title_activity_maps">Map</string>
     <string name="map_search_label">Search…</string>
+    <string name="notes_search_label">Search in notes…</string>
+    <string name="new_note_descriptor">Add a new note</string>
+    <string name="title_activity_notes">Notes</string>
+    <string name="more_actions_on_this_item">More actions on this item</string>
 </resources>
