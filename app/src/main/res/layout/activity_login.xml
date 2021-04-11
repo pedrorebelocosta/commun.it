@@ -7,7 +7,7 @@
     tools:context=".activity.LoginActivity">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/login_back_button"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:background="?attr/selectableItemBackgroundBorderless"
@@ -28,7 +28,7 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="156dp"
-            android:src="@drawable/app_logo" />
+            android:src="@drawable/ic_app_logo" />
 
         <Space
             android:layout_width="match_parent"
@@ -45,7 +45,8 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Space

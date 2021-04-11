@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Commun.it</string>
-    <string name="title_activity_main">Bem-vindo(a)</string>
     <string name="map">Mapa</string>
     <string name="map_tooltip">Ver ocorrências</string>
     <string name="notes">Notas</string>
@@ -16,4 +15,6 @@
     <string name="new_note_descriptor">Adicionar uma nova nota</string>
     <string name="title_activity_notes">Notes</string>
     <string name="more_actions_on_this_item">Mais ações neste item</string>
+    <string name="title_activity_login">Entrar</string>
+    <string name="title_main_activity">Bem vindo(a)</string>
 </resources>

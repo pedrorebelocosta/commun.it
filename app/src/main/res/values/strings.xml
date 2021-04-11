@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Commun.it</string>
-    <string name="title_activity_main">Welcome</string>
+    <string name="title_activity_main" translatable="false">Commun.it</string>
     <string name="map">Map</string>
     <string name="map_tooltip">Open map</string>
     <string name="notes">Notes</string>
@@ -16,4 +16,6 @@
     <string name="title_activity_notes">Notes</string>
     <string name="more_actions_on_this_item">More actions on this item</string>
     <string name="title_activity_login">Login</string>
+    <string name="title_main_activity">Welcome</string>
+    <string name="add_note_title">Add a note</string>
 </resources>

@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         profile_card.setOnClickListener {
-            TODO("Needs verification on login status")
+            startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 }
