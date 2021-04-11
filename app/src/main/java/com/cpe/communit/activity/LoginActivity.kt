@@ -1,7 +1,8 @@
-package com.cpe.communit
+package com.cpe.communit.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.cpe.communit.R
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

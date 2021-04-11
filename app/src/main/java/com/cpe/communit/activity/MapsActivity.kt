@@ -1,7 +1,8 @@
-package com.cpe.communit
+package com.cpe.communit.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.cpe.communit.R
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
