@@ -30,9 +30,9 @@ abstract class NoteDatabase : RoomDatabase() {
         suspend fun populateDatabase(noteDao: NoteDao) {
             // Delete all content here.
             noteDao.deleteAll()
-            var note = Note(1, "Hello", "World")
+            var note = Note(title = "Hello", description = "World")
             noteDao.insert(note)
-            note = Note(2, "World!", "Hello")
+            note = Note(title = "World!", description = "Hello")
             noteDao.insert(note)
         }
     }
