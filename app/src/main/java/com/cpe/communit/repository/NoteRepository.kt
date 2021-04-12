@@ -9,8 +9,7 @@ class NoteRepository(private val noteDao: NoteDao) {
     val allNotes: LiveData<List<Note>> = noteDao.getAll()
 
     @WorkerThread
-    suspend fun insert(note: Note) {
-        println("Repository insert has been called!")
+    fun insert(note: Note) {
         noteDao.insert(note)
     }
 }

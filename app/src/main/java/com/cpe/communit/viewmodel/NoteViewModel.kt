@@ -3,12 +3,13 @@ package com.cpe.communit.viewmodel
 import androidx.lifecycle.*
 import com.cpe.communit.entity.Note
 import com.cpe.communit.repository.NoteRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class NoteViewModel(private val repository: NoteRepository) : ViewModel() {
     val allNotes: LiveData<List<Note>> = repository.allNotes
 
-    fun insert(note: Note) = viewModelScope.launch {
+    fun insert(note: Note) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(note)
     }
 }

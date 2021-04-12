@@ -1,6 +1,5 @@
 package com.cpe.communit.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,9 +10,7 @@ import com.cpe.communit.R
 import com.cpe.communit.entity.Note
 import kotlinx.android.synthetic.main.notes_rv_item.view.*
 
-class NoteAdapter internal constructor(
-    context: Context
-) : RecyclerView.Adapter<NoteViewHolder>() {
+class NoteAdapter : RecyclerView.Adapter<NoteViewHolder>() {
     private var notes = emptyList<Note>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
