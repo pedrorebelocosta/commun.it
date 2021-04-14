@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.AddNoteActivity">
+    tools:context=".activity.EditNoteActivity">
 
     <ImageButton
-        android:id="@+id/add_note_back_button"
+        android:id="@+id/edit_note_back_button"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:background="?attr/selectableItemBackgroundBorderless"
@@ -21,9 +21,9 @@
         android:layout_height="56dp"
         android:gravity="center"
         android:textColor="#263238"
-        android:text="@string/add_note_title"
+        android:text="@string/edit_note_title"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/add_note_back_button"
+        app:layout_constraintStart_toEndOf="@+id/edit_note_back_button"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/title_layout"
+            android:id="@+id/edit_note_title_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,13 +45,13 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_note_title"
+                android:id="@+id/edit_note_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textAutoCorrect" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/description_layout"
+            android:id="@+id/edit_note_description_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_note_description"
+                android:id="@+id/edit_note_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
@@ -69,13 +69,14 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/add_note_save"
+        android:id="@+id/edit_note_save"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/add_note_save_btn_label"
+        android:text="@string/edit_note_save_btn_label"
         android:textColor="#263238"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
