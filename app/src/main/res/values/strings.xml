@@ -23,4 +23,6 @@
     <string name="add_note_save_btn_label">Save</string>
     <string name="empty_note_title_error">Please enter a valid title</string>
     <string name="empty_note_desc_error">Please enter a valid description</string>
+    <string name="menu_delete_note_label">Delete</string>
+    <string name="menu_edit_note_label">Edit</string>
 </resources>

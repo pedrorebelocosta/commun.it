@@ -4,6 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,7 +22,7 @@ import kotlinx.android.synthetic.main.activity_notes.*
 
 class NotesActivity : AppCompatActivity() {
     private val noteViewModel: NoteViewModel by viewModels { NoteViewModelFactory((application as CommunitApplication).repository) }
-    private val noteAdapter = NoteAdapter()
+    private val noteAdapter = NoteAdapter(this@NotesActivity::openNoteOptionsMenu)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +52,33 @@ class NotesActivity : AppCompatActivity() {
         }
     }
 
+    /*
+        "View" is required so we can inflate the menu directly below it
+        "Note" will give us the uid of the note which we can use to perform actions on database
+         through the ViewModel
+     */
+    private fun openNoteOptionsMenu(view: View, note: Note) {
+        view.setOnClickListener {
+            val popupMenu: PopupMenu = PopupMenu(this, view)
+            popupMenu.menuInflater.inflate(R.menu.note_options_menu,popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.menu_delete_note ->
+                        Log.d(CUR_ACTIVITY, "Clicked delete note")
+                    R.id.menu_edit_note ->
+                        Log.d(CUR_ACTIVITY, "Clicked edit note:")
+                }
+                true
+            }
+            popupMenu.show()
+        }
+    }
+
     private companion object {
         private const val NEW_NOTE_REQUEST_CODE = 1
+        private const val UPDATE_NOTE_REQUEST_CODE = 2
+        private const val DELETE_NOTE_REQUEST_CODE = 3
+
+        private const val CUR_ACTIVITY = "NotesActivity: "
     }
 }

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="map_tooltip">Ver ocorrências</string>
-    <string name="notes">Notas</string>
     <string name="notes_tooltip">Ver e adicionar notas</string>
     <string name="profile">Dados pessoais</string>
     <string name="profile_tooltip">Consultar e alterar</string>
@@ -21,4 +19,6 @@
     <string name="add_note_save_btn_label">Guardar</string>
     <string name="empty_note_title_error">Por favor introduza um título válido</string>
     <string name="empty_note_desc_error">Por favor introduza uma descrição válida</string>
+    <string name="menu_delete_note_label">Apagar</string>
+    <string name="menu_edit_note_label">Editar</string>
 </resources>

@@ -10,7 +10,9 @@ import com.cpe.communit.R
 import com.cpe.communit.entity.Note
 import kotlinx.android.synthetic.main.notes_rv_item.view.*
 
-class NoteAdapter : RecyclerView.Adapter<NoteViewHolder>() {
+class NoteAdapter(
+    private val onItemMenuClickListener: (View, Note) -> Unit
+) : RecyclerView.Adapter<NoteViewHolder>() {
     private var notes = emptyList<Note>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteViewHolder {
@@ -23,6 +25,7 @@ class NoteAdapter : RecyclerView.Adapter<NoteViewHolder>() {
         val curPlace = notes[position]
         holder.title.text = curPlace.title
         holder.description.text = curPlace.description
+        holder.moreToggle.setOnClickListener { onItemMenuClickListener(it.note_item_more, curPlace) }
     }
 
     override fun getItemCount(): Int {
