@@ -44,10 +44,6 @@ abstract class NoteDatabase : RoomDatabase() {
             context: Context,
             scope: CoroutineScope
         ): NoteDatabase {
-/*             val tempInstance = INSTANCE
-            if (tempInstance != null) {
-                return tempInstance
-            }*/
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                         context.applicationContext,

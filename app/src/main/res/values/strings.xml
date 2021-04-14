@@ -25,4 +25,8 @@
     <string name="empty_note_desc_error">Please enter a valid description</string>
     <string name="menu_delete_note_label">Delete</string>
     <string name="menu_edit_note_label">Edit</string>
+    <string name="delete_note_dialog_title">Are you sure you want to delete the note?</string>
+    <string name="delete_note_dialog_message">Deleting the note is irreversible</string>
+    <string name="delete_note_dialog_cancel">Cancel</string>
+    <string name="delete_note_dialog_confirm">Confirm</string>
 </resources>

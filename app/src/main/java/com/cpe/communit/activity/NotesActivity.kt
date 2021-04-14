@@ -17,8 +17,10 @@ import com.cpe.communit.adapter.NoteAdapter
 import com.cpe.communit.entity.Note
 import com.cpe.communit.viewmodel.NoteViewModel
 import com.cpe.communit.viewmodel.NoteViewModelFactory
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_add_note.*
 import kotlinx.android.synthetic.main.activity_notes.*
+import kotlinx.coroutines.NonCancellable.cancel
 
 class NotesActivity : AppCompatActivity() {
     private val noteViewModel: NoteViewModel by viewModels { NoteViewModelFactory((application as CommunitApplication).repository) }
@@ -63,10 +65,23 @@ class NotesActivity : AppCompatActivity() {
             popupMenu.menuInflater.inflate(R.menu.note_options_menu,popupMenu.menu)
             popupMenu.setOnMenuItemClickListener {
                 when (it.itemId) {
-                    R.id.menu_delete_note ->
-                        Log.d(CUR_ACTIVITY, "Clicked delete note")
-                    R.id.menu_edit_note ->
+                    R.id.menu_delete_note -> {
+                        MaterialAlertDialogBuilder(this)
+                            .setTitle(getString(R.string.delete_note_dialog_title))
+                            .setMessage(getString(R.string.delete_note_dialog_message))
+                            .setNegativeButton(getString(R.string.delete_note_dialog_cancel)) { dialog, which ->
+                                dialog.dismiss()
+                            }
+                            .setPositiveButton(getString(R.string.delete_note_dialog_confirm)) { dialog, which ->
+                                noteViewModel.delete(note)
+                                Log.i(CUR_ACTIVITY, "Deleted a note")
+                                dialog.dismiss()
+                            }
+                            .show()
+                    }
+                    R.id.menu_edit_note -> {
                         Log.d(CUR_ACTIVITY, "Clicked edit note:")
+                    }
                 }
                 true
             }
@@ -77,7 +92,6 @@ class NotesActivity : AppCompatActivity() {
     private companion object {
         private const val NEW_NOTE_REQUEST_CODE = 1
         private const val UPDATE_NOTE_REQUEST_CODE = 2
-        private const val DELETE_NOTE_REQUEST_CODE = 3
 
         private const val CUR_ACTIVITY = "NotesActivity: "
     }

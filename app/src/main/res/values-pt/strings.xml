@@ -21,4 +21,8 @@
     <string name="empty_note_desc_error">Por favor introduza uma descrição válida</string>
     <string name="menu_delete_note_label">Apagar</string>
     <string name="menu_edit_note_label">Editar</string>
+    <string name="delete_note_dialog_title">Deseja apagar a nota?</string>
+    <string name="delete_note_dialog_message">Apagar a nota é irreversível</string>
+    <string name="delete_note_dialog_cancel">Cancelar</string>
+    <string name="delete_note_dialog_confirm">Confirmar</string>
 </resources>
