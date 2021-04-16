@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.PopupMenu
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,7 +19,6 @@ import com.cpe.communit.viewmodel.NoteViewModelFactory
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_add_note.*
 import kotlinx.android.synthetic.main.activity_notes.*
-import kotlinx.coroutines.NonCancellable.cancel
 
 class NotesActivity : AppCompatActivity() {
     private val noteViewModel: NoteViewModel by viewModels { NoteViewModelFactory((application as CommunitApplication).repository) }
@@ -51,6 +49,10 @@ class NotesActivity : AppCompatActivity() {
             data?.getParcelableExtra<Note>(AddNoteActivity.REPLY_NOTE)?.let {
                 noteViewModel.insert(it)
             }
+        } else if (requestCode == UPDATE_NOTE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            data?.getParcelableExtra<Note>(EditNoteActivity.REPLY_EDITED_NOTE)?.let {
+                noteViewModel.update(it)
+            }
         }
     }
 
@@ -80,7 +82,10 @@ class NotesActivity : AppCompatActivity() {
                             .show()
                     }
                     R.id.menu_edit_note -> {
-                        Log.d(CUR_ACTIVITY, "Clicked edit note:")
+                        Log.i(CUR_ACTIVITY, "Clicked edit note")
+                        val intent = Intent(this@NotesActivity, EditNoteActivity::class.java)
+                        intent.putExtra(NOTE_EXTRA, note)
+                        startActivityForResult(intent, UPDATE_NOTE_REQUEST_CODE)
                     }
                 }
                 true
@@ -89,10 +94,10 @@ class NotesActivity : AppCompatActivity() {
         }
     }
 
-    private companion object {
+    companion object {
         private const val NEW_NOTE_REQUEST_CODE = 1
         private const val UPDATE_NOTE_REQUEST_CODE = 2
-
         private const val CUR_ACTIVITY = "NotesActivity: "
+        const val NOTE_EXTRA = "com.cpe.communit.activity.AddNoteActivity.NOTE_EXTRA"
     }
 }

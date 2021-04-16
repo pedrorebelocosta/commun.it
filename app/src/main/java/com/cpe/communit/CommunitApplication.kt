@@ -7,7 +7,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 
 class CommunitApplication : Application() {
-    val applicationScope = CoroutineScope(SupervisorJob())
-    val database by lazy { NoteDatabase.getDatabase(this, applicationScope) }
+    private val applicationScope = CoroutineScope(SupervisorJob())
+    private val database by lazy { NoteDatabase.getDatabase(this, applicationScope) }
     val repository by lazy { NoteRepository(database.noteDao()) }
 }

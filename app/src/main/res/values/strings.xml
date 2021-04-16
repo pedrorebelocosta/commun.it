@@ -18,8 +18,8 @@
     <string name="title_activity_login">Login</string>
     <string name="title_main_activity">Welcome</string>
     <string name="add_note_title">Add a note</string>
-    <string name="add_note_title_label">Title</string>
-    <string name="add_note_desc_label">Description</string>
+    <string name="note_title_label">Title</string>
+    <string name="note_desc_label">Description</string>
     <string name="add_note_save_btn_label">Save</string>
     <string name="empty_note_title_error">Please enter a valid title</string>
     <string name="empty_note_desc_error">Please enter a valid description</string>
@@ -29,4 +29,6 @@
     <string name="delete_note_dialog_message">Deleting the note is irreversible</string>
     <string name="delete_note_dialog_cancel">Cancel</string>
     <string name="delete_note_dialog_confirm">Confirm</string>
+    <string name="edit_note_save_btn_label">Update</string>
+    <string name="edit_note_title">Edit note</string>
 </resources>
