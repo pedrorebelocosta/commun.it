@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.cpe.communit.R
+import com.cpe.communit.SessionManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +21,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         profile_card.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+            if (SessionManager.isLoggedIn(this)) {
+                startActivity(Intent(this, ProfileActivity::class.java))
+            } else {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
         }
     }
 }

@@ -31,4 +31,16 @@
     <string name="delete_note_dialog_confirm">Confirm</string>
     <string name="edit_note_save_btn_label">Update</string>
     <string name="edit_note_title">Edit note</string>
+    <string name="login_activity_email_label" translatable="false">Email</string>
+    <string name="login_activity_password_label" translatable="false">Password</string>
+    <string name="login_activity_signin_label">Sign-in</string>
+    <string name="incorrect_email_or_password">Incorrect email and/or password!</string>
+    <string name="user_prefs_info_key" translatable="false">USER_INFO</string>
+    <string name="app_jwt_key" translatable="false">jwt</string>
+    <string name="profile_edit_information_toggle_label">Edit information</string>
+    <string name="profile_name_label">Name</string>
+    <string name="profile_save_button_label">Save</string>
+    <string name="profile_full_name_tpl" translatable="false">%1$s %2$s</string>
+    <string name="profile_password_placeholder" translatable="false">PASSWORD PLACEHOLDER</string>
+    <string name="profile_logout_button_text" translatable="false">Logout</string>
 </resources>
