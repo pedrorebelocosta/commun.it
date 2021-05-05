@@ -30,4 +30,9 @@
     <string name="map">Mapa</string>
     <string name="map_tooltip">Abrir mapa</string>
     <string name="notes">Notas</string>
+    <string name="login_activity_signin_label">Entrar</string>
+    <string name="incorrect_email_or_password">Email e/ou password inválidos!</string>
+    <string name="profile_edit_information_toggle_label">Editar dados</string>
+    <string name="profile_name_label">Nome</string>
+    <string name="profile_save_button_label">Guardar</string>
 </resources>
