@@ -44,4 +44,8 @@
     <string name="profile_password_placeholder" translatable="false">PASSWORD PLACEHOLDER</string>
     <string name="profile_logout_button_text" translatable="false">Logout</string>
     <string name="window_occurrence_is_road_problem_lbl">Road problem</string>
+    <string name="add_an_occurrence_label">Add an occurrence</string>
+    <string name="add_occurrence_error_label">Please provide a small description</string>
+    <string name="add_occurrence_photo_error">Please add a photo to your report</string>
+    <string name="add_photo_to_occurrence_warn">To add an occurrence, please attach a photo by clicking the camera icon above.</string>
 </resources>

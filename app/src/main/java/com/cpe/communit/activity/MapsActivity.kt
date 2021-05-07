@@ -1,5 +1,6 @@
 package com.cpe.communit.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -34,14 +35,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
         map_back_button.setOnClickListener { onBackPressed() }
+        add_occurrence_btn.setOnClickListener {
+            startActivity(Intent(this, AddOccurrenceActivity::class.java))
+        }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         mMap.setInfoWindowAdapter(MarkerInfoWindowAdapter(this))
-        mMap.uiSettings.isZoomControlsEnabled = false;
+        mMap.uiSettings.isZoomControlsEnabled = false
         val portugal = LatLng(40.146212804514626, -8.095561077725725)
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(portugal))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(portugal, 6.0f))
 
         val request = ServiceBuilder.buildService(EndPoints::class.java)
         val call = request.getOccurrences()
@@ -49,7 +53,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         call.enqueue(object: Callback<List<Occurrence>> {
             override fun onResponse(call: Call<List<Occurrence>>, response: Response<List<Occurrence>>) {
                 if (response.isSuccessful) {
-                    val jwtPayload: JWTPayload? = SessionManager.getJWTPayload(this@MapsActivity)
+                    val jwtPayload: JWTPayload? = SessionManager.getJWTPayload()
                     for (occurrence in response.body()!!) {
                         val markerOptions = MarkerOptions().position(LatLng(occurrence.lat, occurrence.lng))
                         if (jwtPayload?.user_id == occurrence.user_id) {

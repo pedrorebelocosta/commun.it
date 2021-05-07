@@ -8,10 +8,16 @@ import com.cpe.communit.SessionManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    override fun onResume() {
+        super.onResume()
+        SessionManager.setup(this)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Initializing the SessionManager so it can access the SharedPreferences
         map_card.setOnClickListener {
             startActivity(Intent(this, MapsActivity::class.java))
         }
@@ -21,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         profile_card.setOnClickListener {
-            if (SessionManager.isLoggedIn(this)) {
+            if (SessionManager.isLoggedIn()) {
                 startActivity(Intent(this, ProfileActivity::class.java))
             } else {
                 startActivity(Intent(this, LoginActivity::class.java))

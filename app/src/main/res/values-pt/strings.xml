@@ -36,4 +36,5 @@
     <string name="profile_name_label">Nome</string>
     <string name="profile_save_button_label">Guardar</string>
     <string name="window_occurrence_is_road_problem_lbl">Na estrada</string>
+    <string name="add_photo_to_occurrence_warn">To add an occurrence, please attach a photo by clicking the camera icon above.</string>
 </resources>
