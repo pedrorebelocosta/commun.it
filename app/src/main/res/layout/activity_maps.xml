@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <androidx.fragment.app.FragmentContainerView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -11,47 +12,65 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".activity.MapsActivity" />
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/map_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_baseline_arrow_back_24"
         android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        android:alpha="0.95"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#626262"
+        app:backgroundTint="#FFFFFF"/>
 
-        <LinearLayout
+    <CheckBox
+        android:id="@+id/is_road_problem_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:checked="false"
+        android:text="@string/only_road_problems_label"
+        app:layout_constraintBottom_toBottomOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="@+id/map"
+        app:layout_constraintStart_toStartOf="@+id/distance_filters" />
+
+    <RadioGroup
+        android:id="@+id/distance_filters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="24dp"
+        android:checkedButton="@+id/radio_show_all"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/radio_show_all"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|center_horizontal">
+            android:layout_height="match_parent"
+            android:text="@string/filter_show_all_label" />
 
-            <ImageButton
-                android:id="@+id/map_back_button"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_baseline_arrow_back_24" />
+        <RadioButton
+            android:id="@+id/radio_show_1km"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/filter_show_1km_label" />
 
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="8"
-                android:background="@android:color/transparent"
-                android:ellipsize="start"
-                android:hint="@string/map_search_label" />
+        <RadioButton
+            android:id="@+id/radio_show_5km"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/filter_show_5km_label" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:src="@drawable/ic_baseline_search_24" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
+        <RadioButton
+            android:id="@+id/radio_show_15km"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/filter_show_15km_label" />
+    </RadioGroup>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_occurrence_btn"
         android:layout_width="wrap_content"

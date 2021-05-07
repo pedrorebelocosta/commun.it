@@ -36,5 +36,11 @@
     <string name="profile_name_label">Nome</string>
     <string name="profile_save_button_label">Guardar</string>
     <string name="window_occurrence_is_road_problem_lbl">Na estrada</string>
-    <string name="add_photo_to_occurrence_warn">To add an occurrence, please attach a photo by clicking the camera icon above.</string>
+    <string name="add_photo_to_occurrence_warn">Para adicionar uma ocorrência, é necessário uma fotografia, clique no icon da camera acima para tirar uma foto.</string>
+    <string name="filter_show_all_label">All</string>
+    <string name="add_an_occurrence_label">Adicionar Ocorrência</string>
+    <string name="add_occurrence_error_label">Dê uma pequena descrição da ocorrência</string>
+    <string name="add_occurrence_photo_error">Por favor adicione uma foto ao seu relatório</string>
+    <string name="occurrence_details_lbl">Detalhes da ocorrência</string>
+    <string name="only_road_problems_label">Apenas problemas na estrada</string>
 </resources>

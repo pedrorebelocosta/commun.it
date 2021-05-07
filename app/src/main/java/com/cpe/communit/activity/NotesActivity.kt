@@ -62,36 +62,34 @@ class NotesActivity : AppCompatActivity() {
          through the ViewModel
      */
     private fun openNoteOptionsMenu(view: View, note: Note) {
-        view.setOnClickListener {
-            val popupMenu: PopupMenu = PopupMenu(this, view)
-            popupMenu.menuInflater.inflate(R.menu.note_options_menu,popupMenu.menu)
-            popupMenu.setOnMenuItemClickListener {
-                when (it.itemId) {
-                    R.id.menu_delete_note -> {
-                        MaterialAlertDialogBuilder(this)
-                            .setTitle(getString(R.string.delete_note_dialog_title))
-                            .setMessage(getString(R.string.delete_note_dialog_message))
-                            .setNegativeButton(getString(R.string.delete_note_dialog_cancel)) { dialog, which ->
-                                dialog.dismiss()
-                            }
-                            .setPositiveButton(getString(R.string.delete_note_dialog_confirm)) { dialog, which ->
-                                noteViewModel.delete(note)
-                                Log.i(CUR_ACTIVITY, "Deleted a note")
-                                dialog.dismiss()
-                            }
-                            .show()
-                    }
-                    R.id.menu_edit_note -> {
-                        Log.i(CUR_ACTIVITY, "Clicked edit note")
-                        val intent = Intent(this@NotesActivity, EditNoteActivity::class.java)
-                        intent.putExtra(NOTE_EXTRA, note)
-                        startActivityForResult(intent, UPDATE_NOTE_REQUEST_CODE)
-                    }
+        val popupMenu: PopupMenu = PopupMenu(this, view)
+        popupMenu.menuInflater.inflate(R.menu.note_options_menu,popupMenu.menu)
+        popupMenu.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.menu_delete_note -> {
+                    MaterialAlertDialogBuilder(this)
+                        .setTitle(getString(R.string.delete_note_dialog_title))
+                        .setMessage(getString(R.string.delete_note_dialog_message))
+                        .setNegativeButton(getString(R.string.delete_note_dialog_cancel)) { dialog, which ->
+                            dialog.dismiss()
+                        }
+                        .setPositiveButton(getString(R.string.delete_note_dialog_confirm)) { dialog, which ->
+                            noteViewModel.delete(note)
+                            Log.i(CUR_ACTIVITY, "Deleted a note")
+                            dialog.dismiss()
+                        }
+                        .show()
                 }
-                true
+                R.id.menu_edit_note -> {
+                    Log.i(CUR_ACTIVITY, "Clicked edit note")
+                    val intent = Intent(this@NotesActivity, EditNoteActivity::class.java)
+                    intent.putExtra(NOTE_EXTRA, note)
+                    startActivityForResult(intent, UPDATE_NOTE_REQUEST_CODE)
+                }
             }
-            popupMenu.show()
+            true
         }
+        popupMenu.show()
     }
 
     companion object {

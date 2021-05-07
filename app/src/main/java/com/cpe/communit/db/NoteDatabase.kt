@@ -22,14 +22,12 @@ abstract class NoteDatabase : RoomDatabase() {
             super.onOpen(db)
             INSTANCE?.let { database ->
                 scope.launch {
-                    populateDatabase(database.noteDao())
+                    // populateDatabase(database.noteDao())
                 }
             }
         }
 
         suspend fun populateDatabase(noteDao: NoteDao) {
-            // Delete all content here.
-            noteDao.deleteAll()
             var note = Note(title = "Hello", description = "World")
             noteDao.insert(note)
             note = Note(title = "World!", description = "Hello")

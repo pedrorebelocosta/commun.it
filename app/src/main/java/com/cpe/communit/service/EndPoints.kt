@@ -21,5 +21,4 @@ interface EndPoints {
 
     @POST("/occurrence")
     fun createOccurrence(@Body occurrence: Occurrence): Call<Void>
-
 }
