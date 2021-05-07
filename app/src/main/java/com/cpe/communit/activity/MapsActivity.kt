@@ -4,8 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.google.android.gms.maps.model.BitmapDescriptor;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.cpe.communit.R
 import com.cpe.communit.SessionManager
 import com.cpe.communit.adapter.MarkerInfoWindowAdapter
@@ -17,14 +15,13 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.*
 import kotlinx.android.synthetic.main.activity_maps.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
     private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +40,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         mMap.setInfoWindowAdapter(MarkerInfoWindowAdapter(this))
+        mMap.setOnInfoWindowClickListener(this)
         mMap.uiSettings.isZoomControlsEnabled = false
         val portugal = LatLng(40.146212804514626, -8.095561077725725)
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(portugal, 6.0f))
@@ -69,5 +67,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 Log.e("MapsActivity: ", t.message.toString())
             }
         })
+    }
+
+    override fun onInfoWindowClick(marker: Marker) {
+        val occurrence = marker.tag as Occurrence
+        val intent = Intent(this@MapsActivity, OccurrenceDetailActivity::class.java)
+        intent.putExtra(OCCURRENCE_EXTRA, occurrence)
+        startActivity(intent)
+    }
+
+    companion object {
+        const val OCCURRENCE_EXTRA = "com.cpe.communit.activity.OccurrenceDetailActivity.OCCURRENCE_EXTRA"
     }
 }

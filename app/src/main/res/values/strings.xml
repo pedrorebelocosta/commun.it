@@ -48,4 +48,5 @@
     <string name="add_occurrence_error_label">Please provide a small description</string>
     <string name="add_occurrence_photo_error">Please add a photo to your report</string>
     <string name="add_photo_to_occurrence_warn">To add an occurrence, please attach a photo by clicking the camera icon above.</string>
+    <string name="occurrence_details_lbl">Occurrence details</string>
 </resources>
