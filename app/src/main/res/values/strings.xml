@@ -49,4 +49,9 @@
     <string name="add_occurrence_photo_error">Please add a photo to your report</string>
     <string name="add_photo_to_occurrence_warn">To add an occurrence, please attach a photo by clicking the camera icon above.</string>
     <string name="occurrence_details_lbl">Occurrence details</string>
+    <string name="filter_show_all_label">All</string>
+    <string name="filter_show_1km_label">1KM</string>
+    <string name="filter_show_5km_label">5KM</string>
+    <string name="filter_show_15km_label">15KM</string>
+    <string name="only_road_problems_label">Only road problems</string>
 </resources>
