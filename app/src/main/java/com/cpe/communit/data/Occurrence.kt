@@ -1,8 +1,8 @@
 package com.cpe.communit.data
 
 data class Occurrence(
-    val id: Int,
-    val user_id: Int,
+    val id: Int? = null,
+    val user_id: Int? = null,
     val description: String,
     val lat: Double,
     val lng: Double,

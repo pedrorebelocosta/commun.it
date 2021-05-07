@@ -18,13 +18,13 @@ class ProfileActivity : AppCompatActivity() {
             TODO("Future development")
         }
         profile_logout_button.setOnClickListener {
-            SessionManager.logout(this)
+            SessionManager.logout()
             finish()
         }
     }
 
     private fun initializeFields() {
-        val jwtPayload = SessionManager.getJWTPayload(this)
+        val jwtPayload = SessionManager.getJWTPayload()
         profile_header_name.text = String.format(getString(R.string.profile_full_name_tpl), jwtPayload!!.first_name, jwtPayload.last_name)
         profile_header_email.text = jwtPayload.email
         activity_profile_name.setText(String.format(getString(R.string.profile_full_name_tpl), jwtPayload.first_name, jwtPayload.last_name))
